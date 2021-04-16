@@ -23,6 +23,13 @@ window.onload = () => {
 
     submit.addEventListener('click', () => {
         if (input.value == '') {
+            input_error.textContent = 'You must enter text to get a result';
+            input_error.classList.add('error');
+        }
+
+        else if (input.value.search(/[a-z]/gi) < 0 ) {
+            console.log('you are right')
+            input_error.textContent = 'You must enter text in english';
             input_error.classList.add('error');
         }
     
