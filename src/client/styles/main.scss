@@ -1,9 +1,113 @@
+$main-color: #11a683;
+
 body {
-    background-color: rgb(47, 196, 255);
-    .welcome {
-        color: red
+    margin: auto;
+    background-image: url('../assets/background3.jpg');
+    background-color: #0000008a;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.nlp {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.nlp_header {
+    padding: 20px 0;
+    margin: 0 auto 50px; width: 50%;
+    background-color: $main-color;
+    color: #040404;
+    font-family: monospace;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 3px 2px 7px #000000bd;
+}
+
+.nlp_input {
+    padding: 15px;
+    width: 50%; height: 100px;
+    margin: 0 auto 50px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #3a3838;
+    outline: none;
+    border: 3px solid $main-color;
+    background-color: #ffffffab;
+    &::placeholder {
+        color: rgb(5, 5, 5)
     }
-    input {
-        border: 1px solid purple
+}
+
+.nlp_input-error {
+    display: none;
+    &.error {
+        display: block;
+        width: 50%;
+        margin: 0 auto 20px;
+        padding: 20px 0;
+        background-color: #efaeae;
+        border: 3px solid red;
+        border-radius: 10px;
+    }
+}
+
+.nlp_submit {
+    padding: 10px 35px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    outline: none; border: none;
+    box-shadow: 0px 0px 5px #0e0e0e;
+    background-color: $main-color;
+    transition: all .3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        transform: scale(1.1);
+    }
+}
+
+.nlp_output {
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+    background-color: gainsboro;
+    border-radius: 15px;
+    border: 2px solid $main-color;
+    div:not(:last-child) {
+        display: flex;
+        justify-content: space-around;
+        p {
+            width: 50%;
+            text-align: center;
+        }
+        &:nth-child(odd) {
+            background-color: $main-color;
+        }
+        &.nlp_output-header {
+            background-color: #37434a;
+            color: white
+        }
+    }
+}
+
+.nlp_output-loading {
+    display: none;
+    width: 50px; height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 5px solid $main-color;
+    border-top: 5px solid transparent;
+    transform: rotate(425deg);
+    margin: auto;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

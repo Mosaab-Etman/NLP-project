@@ -1,2 +1,2 @@
-import './js/nlp';
+import './js/main';
 import './styles/main.scss';

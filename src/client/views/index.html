@@ -7,9 +7,45 @@
         <title>NLP</title>
     </head>
     <body>
-        <h1 class="nlp-header">Welcome to the Natural Language Processing tool</h1>
-        <textarea cols="30" rows="10" class="nlp-text" placeholder="Pleaes enter your text hear in English"></textarea>
-        <button class="nlp-submit">Check</button>
-        <div class="nlp-output"></div>
+        <!-- MAIN BODY OF THE TOOL -->
+        <section class="nlp">
+
+            <!-- TOOL HEADER -->
+            <h1 class="nlp_header">Welcome to the Natural Language Processing tool</h1>
+            
+            <!-- TOOL INPUT -->
+            <textarea class="nlp_input" cols="30" rows="10" class="nlp-text" placeholder="Pleaes enter your text"></textarea>
+            
+            <!-- TOOL INPUT ERROR -->
+            <div class="nlp_input-error">You must enter text to get a result</div>
+            
+            <!-- SUBMIT BUTTON -->
+            <button class="nlp_submit">Check</button>
+
+            <!-- RESULTES SECTION -->
+            <div class="nlp_output">
+                <div class="nlp_output-header">
+                    <p>Property</p>
+                    <p>Result</p>
+                </div>
+                <div class="nlp_output-agreement"></div>
+                <div class="nlp_output-confidence"></div>
+                <div class="nlp_output-irony"></div>
+                <div class="nlp_output-model"></div>
+                <div class="nlp_output-polarity"></div>
+                <div class="nlp_output-subjectivity"></div>
+                <div class="nlp_output-loading"></div>
+            </div>
+        </section>
+        
     </body>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </html>
