@@ -8,3 +8,6 @@ A) Webpack: to bundle file and do many other processes.
 B) Dotenv: to secure the important variables like API key
 C) Service Workers: to cache the tool and load it offline
 
+#Scripts:
+A) build-dev: to run application using webpack dev server
+b) build-prod: to build the dist folder
