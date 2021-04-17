@@ -8,6 +8,7 @@
     "transform": {}
   },
   "scripts": {
+    "start": "node src/server/index.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "test": "jest"
